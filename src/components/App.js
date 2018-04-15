@@ -5,6 +5,7 @@ import {LoginDispatcher} from './LoginDispatcher';
 import {persistStore} from 'redux-persist';
 import {AsyncStorage, View, StatusBar} from 'react-native';
 import {globalStyles} from '../constants/styles';
+import {TopBar} from './dumb/TopBar';
 
 export class App extends React.Component {
   componentDidMount() {
@@ -18,6 +19,7 @@ export class App extends React.Component {
     return (
       <Provider store={store}>
         <View style={globalStyles.flex}>
+          <TopBar />
           <StatusBar barStyle="light-content" />
           <LoginDispatcher />
         </View>
